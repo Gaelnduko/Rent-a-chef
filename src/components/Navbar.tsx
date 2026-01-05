@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Heart, User } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,11 +12,12 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-serif font-bold text-gradient-gold">
-              PrivéChef
+          <Link to="/" className="flex items-center gap-3">
+            <img src={logo} alt="Rent a Chef" className="w-12 h-12 object-contain" />
+            <span className="text-xl font-serif font-bold text-gradient-gold">
+              Rent a Chef
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -27,9 +30,9 @@ const Navbar = () => {
             <a href="#pricing" className="text-foreground/80 hover:text-primary transition-colors">
               Pricing
             </a>
-            <a href="#about" className="text-foreground/80 hover:text-primary transition-colors">
+            <Link to="/about" className="text-foreground/80 hover:text-primary transition-colors">
               About
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Actions */}
@@ -67,9 +70,9 @@ const Navbar = () => {
               <a href="#pricing" className="text-foreground/80 hover:text-primary transition-colors py-2">
                 Pricing
               </a>
-              <a href="#about" className="text-foreground/80 hover:text-primary transition-colors py-2">
+              <Link to="/about" className="text-foreground/80 hover:text-primary transition-colors py-2">
                 About
-              </a>
+              </Link>
               <div className="flex items-center gap-4 pt-4 border-t border-border/30">
                 <Button variant="ghost" size="icon">
                   <Heart className="w-5 h-5" />
